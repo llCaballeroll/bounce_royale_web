@@ -1,64 +1,227 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bounce Royale - Salta, Rebota y Sobrevive</title>
+    <title>Bounce Royale | Salta, Rebota y Sobrevive</title>
+    <meta name="description" content="Bounce Royale: juego arcade de rebotes, física, skins y batallas multijugador. Salta, rebota, sobrevive y demuestra quién domina la arena.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo impact-text">BOUNCE ROYALE</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="presskit.html">Press Kit</a></li>
-                <li><a href="technical.html">Soporte</a></li>
-                <li><a href="privacy.html">Privacidad</a></li>
-            </ul>
-        </nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Bounce Royale</a>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">Descubrir</a>
+                <a href="#gameplay" class="nav-link">Galería</a>
+                <a href="presskit.html" class="nav-link">Press Kit</a>
+                <a href="#descargar" class="nav-cta" id="smartDownloadBtn">Descargar</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text fade-in-up">
+                <h1>Salta, rebota<br><span class="text-gradient">y sobrevive.</span></h1>
+                <p class="hero-subtitle">
+                    Domina las físicas, esquiva obstáculos, colecciona skins épicas y enfréntate al mundo en batallas multijugador de hasta 6 jugadores.
+                </p>
+                
+                <div class="hero-actions" id="descargar">
+                    <a 
+                        href="https://play.google.com/store/apps/details?id=com.luiscaballero.bounceroyale&hl=es_MX" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="btn btn-android"
+                    >
+                        Descargar en Android
+                    </a>
+
+                    <a 
+                        href="https://apps.apple.com/mx/app/bounce-royale-jump-vs/id6761583939" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="btn btn-ios"
+                    >
+                        Descargar en iOS
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image fade-in-up delay-1">
+                <div class="phone-mockup">
+                    <img src="assets/images/screenshot_hero.png" alt="Bounce Royale Gameplay Mobile" class="mockup-img">
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main class="container">
-        <section class="hero">
-            <div class="hero-text">
-                <h1>EL REY DEL REBOTE</h1>
-                <p>Domina las físicas, colecciona skins épicas y enfréntate al mundo en batallas multijugador de hasta 6 jugadores. ¿Tienes lo necesario para ser el último superviviente?</p>
-                <a href="https://play.google.com/store/apps/details?id=com.tu.paquete" class="btn-play">DESCARGAR GRATIS</a>
+    <section id="gameplay" class="section-dark">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>Domina la arena.</h2>
+                <p>Partidas rápidas, físicas precisas y caos multijugador en cada rebote.</p>
             </div>
-            <div class="hero-image">
-                <img src="assets/images/screenshot_hero.jpg" alt="Gameplay de Bounce Royale">
+            
+            <div class="gameplay-grid fade-in-up">
+                <div class="gallery-card">
+                    <img src="assets/images/screenshot_1.png" alt="Modo aventura de Bounce Royale" loading="lazy">
+                </div>
+                <div class="gallery-card">
+                    <img src="assets/images/screenshot_2.png" alt="Batallas multijugador de Bounce Royale" loading="lazy">
+                </div>
+                <div class="gallery-card">
+                    <img src="assets/images/screenshot_3.png" alt="Skins y recompensas de Bounce Royale" loading="lazy">
+                </div>
             </div>
-        </section>
 
-        <section class="glass-panel">
-            <h2 class="text-center">CARACTERÍSTICAS ÉPICAS</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <h3>MODO AVENTURA</h3>
-                    <p>Esquiva obstáculos, recolecta monedas y desbloquea arenas exclusivas en el Camino de Trofeos.</p>
+            <div class="gameplay-wide fade-in-up">
+                <div class="wide-card">
+                    <img src="assets/images/screenshot_wide_1.png" alt="Gameplay panorámico de Bounce Royale" loading="lazy">
                 </div>
-                <div class="feature-card">
-                    <h3>MODO VS ONLINE</h3>
-                    <p>Compite en tiempo real contra otros 5 jugadores o bots. Destruye rivales usando el Modo Fever.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>TIENDA PREMIUM</h3>
-                    <p>Abre Cajas Misteriosas, colecciona cartas y mejora tu estilo con skins Comunes, Épicas y Champions.</p>
+                <div class="wide-card">
+                    <img src="assets/images/screenshot_wide_2.png" alt="Arena multijugador de Bounce Royale" loading="lazy">
                 </div>
             </div>
-        </section>
-    </main>
+
+        </div>
+    </section>
+
+    <section id="features" class="section-light">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>¿Por qué jugar?</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="card glass fade-in-up delay-1">
+                    <div class="card-icon">🏆</div>
+                    <h3>Modo Aventura</h3>
+                    <p>Esquiva obstáculos, recolecta monedas y desbloquea arenas exclusivas mientras avanzas en el Camino de Trofeos.</p>
+                </div>
+
+                <div class="card glass fade-in-up delay-2">
+                    <div class="card-icon">⚔️</div>
+                    <h3>Modo VS Online</h3>
+                    <p>Compite contra otros jugadores en partidas intensas y demuestra quién tiene los mejores reflejos.</p>
+                </div>
+
+                <div class="card glass fade-in-up delay-3">
+                    <div class="card-icon">🔥</div>
+                    <h3>Modo Fever</h3>
+                    <p>Activa momentos de máxima intensidad para dominar la arena, superar rivales y sobrevivir al caos.</p>
+                </div>
+
+                <div class="card glass fade-in-up delay-4">
+                    <div class="card-icon">🎁</div>
+                    <h3>Skins y Recompensas</h3>
+                    <p>Abre cajas misteriosas, colecciona cartas y desbloquea skins comunes, épicas y champions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-video">
+        <div class="container fade-in-up">
+            <div class="video-wrapper">
+                <div class="video-placeholder">
+                    <span>Ver Trailer Oficial</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-about">
+        <div class="container narrow-container fade-in-up">
+            <h2>Nuestra Misión</h2>
+            <p>
+                Creamos Bounce Royale para quienes disfrutan partidas rápidas, competitivas y llenas de energía. Un juego donde cada salto cuenta, cada rebote puede salvarte y solo el más hábil sobrevive.
+            </p>
+        </div>
+    </section>
 
     <footer>
-        <p class="impact-text" style="color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 1rem;">BOUNCE ROYALE</p>
-        <p>© 2026 Luis Angel Caballero Jardon. Todos los derechos reservados.</p>
-        <p style="margin-top: 1rem; font-size: 0.8rem;">
-            <a href="terms.html">Términos de Servicio</a> | <a href="privacy.html">Política de Privacidad</a>
-        </p>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="privacy.html">Privacidad</a>
+                <a href="terms.html">Términos</a>
+                <a href="technical.html">Tech Specs</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Bounce Royale. Creado con pasión por Luis Angel Caballero Jardón.</p>
+                <p class="location">Metepec, Estado de México.</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+
+    <script>
+        const smartDownloadBtn = document.getElementById("smartDownloadBtn");
+
+        const androidUrl = "https://play.google.com/store/apps/details?id=com.luiscaballero.bounceroyale&hl=es_MX";
+        const iosUrl = "https://apps.apple.com/mx/app/bounce-royale-jump-vs/id6761583939";
+
+        smartDownloadBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            const isAndroid = /android/i.test(userAgent);
+
+            const isIOS =
+                /iPad|iPhone|iPod/.test(userAgent) ||
+                (
+                    navigator.platform === "MacIntel" &&
+                    navigator.maxTouchPoints > 1
+                );
+
+            if (isAndroid) {
+                window.location.href = androidUrl;
+                return;
+            }
+
+            if (isIOS) {
+                window.location.href = iosUrl;
+                return;
+            }
+
+            document.getElementById("descargar").scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        });
+    </script>
 
 </body>
 </html>

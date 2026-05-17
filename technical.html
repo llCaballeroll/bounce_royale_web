@@ -1,66 +1,666 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte Técnico - Bounce Royale</title>
+    <title>Documentación Técnica | Bounce Royale</title>
+
+    <meta 
+        name="description" 
+        content="Technical Case Study: arquitectura, stack tecnológico, sistemas de juego, monetización y estructura técnica de Bounce Royale."
+    >
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" 
+        rel="stylesheet"
+    >
+    <link 
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" 
+        rel="stylesheet"
+    >
+    
     <link rel="stylesheet" href="css/styles.css">
+
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+
+    <style>
+        :root {
+            --code-bg: #111827;
+            --code-border: rgba(255, 255, 255, 0.12);
+            --mono-font: 'JetBrains Mono', monospace;
+        }
+
+        .tech-hero {
+            padding-top: calc(var(--nav-height) + 4rem);
+            padding-bottom: 4rem;
+            text-align: center;
+        }
+
+        .tech-hero h1 {
+            font-size: clamp(2.6rem, 7vw, 5rem);
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -0.07em;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tech-hero .hero-subtitle {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tech-badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            font-family: var(--mono-font);
+            font-weight: 500;
+        }
+
+        .tech-section-header {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .tech-section-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.8rem;
+        }
+
+        .tech-section-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 720px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .tech-grid.four-cols {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .tech-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 1.6rem;
+            border-radius: 22px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.3);
+            background: rgba(30, 30, 30, 0.72);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+        }
+
+        .tech-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 850;
+            letter-spacing: -0.03em;
+        }
+
+        .tech-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.65;
+        }
+
+        .deps-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .dep-item {
+            font-family: var(--mono-font);
+            font-size: 0.85rem;
+            color: #dbeafe;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.18);
+            padding: 9px 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .code-window {
+            background: var(--code-bg);
+            border: 1px solid var(--code-border);
+            border-radius: 18px;
+            overflow: hidden;
+            font-family: var(--mono-font);
+            margin: 2rem 0;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+        }
+
+        .code-header {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 12px 15px;
+            display: flex;
+            gap: 7px;
+            border-bottom: 1px solid var(--code-border);
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+
+        .code-content {
+            padding: 22px;
+            overflow-x: auto;
+            color: #d4d4d4;
+            font-size: 0.88rem;
+            line-height: 1.75;
+        }
+
+        .tree-line { display: block; white-space: nowrap; }
+        .tree-comment { color: #86efac; margin-left: 15px; font-style: italic; opacity: 0.75; }
+        .tree-folder { color: var(--accent-blue); font-weight: 700; }
+        .tree-file { color: var(--text-primary); }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .tech-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 900;
+        }
+
+        .tech-screens {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .tech-screens {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .screen-card {
+            aspect-ratio: 16 / 9;
+            background:
+                radial-gradient(circle at center, rgba(56, 189, 248, 0.12), transparent 45%),
+                #111827;
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .screen-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.65;
+        }
+
+        .tech-cta {
+            text-align: center;
+        }
+
+        .tech-cta p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.05rem;
+        }
+
+        .tech-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .tech-hero {
+                padding-top: calc(var(--nav-height) + 2.5rem);
+            }
+
+            .code-content {
+                font-size: 0.78rem;
+                padding: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo impact-text">BOUNCE ROYALE</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="presskit.html">Press Kit</a></li>
-                <li><a href="technical.html" style="color: var(--accent-gold);">Soporte</a></li>
-                <li><a href="privacy.html">Privacidad</a></li>
-            </ul>
-        </nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                Bounce Royale <span style="font-weight:300; opacity:0.6;">| Docs</span>
+            </a>
+
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Volver al Inicio</a>
+                <a href="#architecture" class="nav-link">Arquitectura</a>
+                <a href="presskit.html" class="nav-link">Press Kit</a>
+                <a href="https://github.com/llCaballeroll" target="_blank" rel="noopener noreferrer" class="nav-cta">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="tech-hero container fade-in-up">
+        <h1>Arquitectura Técnica</h1>
+
+        <p class="hero-subtitle">
+            Engineering Case Study: desarrollo de un arcade multijugador con físicas, progresión, monetización y experiencia mobile-first.
+        </p>
+        
+        <div class="tech-badge-container">
+            <span class="tech-badge">Flutter</span>
+            <span class="tech-badge">Flame Engine</span>
+            <span class="tech-badge">Dart</span>
+            <span class="tech-badge">Mobile First</span>
+            <span class="tech-badge">In-App Purchases</span>
+            <span class="tech-badge">AdMob</span>
+        </div>
     </header>
 
-    <main class="container">
-        <section class="glass-panel legal-content">
-            <h1 style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">CENTRO DE SOPORTE</h1>
+    <section class="section-dark">
+        <div class="container fade-in-up delay-1">
 
-            <h2>Preguntas Frecuentes (FAQ)</h2>
+            <div class="tech-section-header">
+                <h2>Stack Tecnológico</h2>
+                <p>
+                    Selección de herramientas pensada para rendimiento móvil, lógica arcade en tiempo real, monetización y escalabilidad multiplataforma.
+                </p>
+            </div>
 
-            <h3>1. Compré "Eliminar Anuncios" pero sigo viendo publicidad. ¿Qué hago?</h3>
-            <p>Asegúrate de estar conectado a la misma cuenta de Google Play o App Store con la que realizaste la compra. Luego, ve al menú de <strong>Ajustes</strong> dentro del juego (el icono de engranaje) y presiona el botón <strong>"Restaurar Compras"</strong>. Esto reactivará tu cuenta Premium al instante.</p>
+            <div class="tech-grid four-cols">
 
-            <h3>2. Desinstalé el juego o cambié de teléfono y perdí mis skins y cajas.</h3>
-            <p>Actualmente, el progreso de Bounce Royale (récords, cajas misteriosas, monedas y skins desbloqueadas) <strong>se guarda de forma local en tu dispositivo</strong>. Si borras los datos de la aplicación o la desinstalas, perderás los artículos consumibles. ¡Estamos trabajando en el guardado en la nube para futuras actualizaciones!</p>
+                <div class="tech-card">
+                    <h3>⚡ Core Framework</h3>
+                    <p>
+                        <strong>Flutter</strong> como base principal para crear una interfaz fluida, responsiva y compilada de forma nativa para móviles.
+                    </p>
+                </div>
 
-            <h3>3. El Modo VS no encuentra jugadores y dice "Sin Conexión".</h3>
-            <p>El juego detecta tu conexión a internet para buscar jugadores reales. Si tu conexión es inestable, juegas en modo avión, o no hay suficientes jugadores disponibles en ese segundo, el juego automáticamente te emparejará contra bots (IA) para que no tengas que esperar y puedas jugar de inmediato.</p>
+                <div class="tech-card">
+                    <h3>🎮 Game Engine</h3>
+                    <p>
+                        <strong>Flame Engine</strong> para manejar el game loop, renderizado 2D, entidades, colisiones y comportamiento arcade.
+                    </p>
+                </div>
 
-            <h3>4. El juego funciona lento o con tirones en mi celular.</h3>
-            <p>Bounce Royale utiliza un motor de físicas en tiempo real. Si experimentas lentitud, te recomendamos:</p>
-            <ul>
-                <li>Cerrar otras aplicaciones que estén abiertas en segundo plano.</li>
-                <li>Desactivar el "Modo de Ahorro de Batería" de tu teléfono, ya que esto limita el rendimiento del procesador.</li>
-                <li>Reiniciar el juego.</li>
-            </ul>
+                <div class="tech-card">
+                    <h3>💰 Monetización</h3>
+                    <p>
+                        Integración con anuncios recompensados, banners, interstitials y compras dentro de la app para desbloqueos o beneficios.
+                    </p>
+                </div>
 
-            <hr style="border-color: rgba(255,255,255,0.1); margin: 2rem 0;">
+                <div class="tech-card">
+                    <h3>🌐 Multiplataforma</h3>
+                    <p>
+                        Código base preparado para Android e iOS, con adaptación visual y técnica para distintos tamaños de pantalla.
+                    </p>
+                </div>
 
-            <h2>¿Necesitas más ayuda?</h2>
-            <p>Si experimentas un error crítico que no está en esta lista, o tienes problemas con una transacción, puedes contactar al desarrollador directamente enviando un correo a:</p>
-            <p style="text-align: center; font-size: 1.2rem; font-weight: bold; margin-top: 1rem;">
-                <a href="mailto:soporte@tu-dominio.com">soporte@tu-dominio.com</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container fade-in-up">
+
+            <div class="tech-section-header">
+                <h2>Sistemas del Juego</h2>
+                <p>
+                    Bounce Royale combina físicas simples, control táctil, progresión visual y mecánicas competitivas para mantener partidas rápidas y adictivas.
+                </p>
+            </div>
+
+            <div class="tech-grid four-cols">
+
+                <div class="tech-card">
+                    <h3>🕹️ Control One-Tap</h3>
+                    <p>
+                        Sistema de entrada táctil diseñado para que el jugador controle saltos y rebotes con una interacción sencilla.
+                    </p>
+                </div>
+
+                <div class="tech-card">
+                    <h3>🧱 Colisiones</h3>
+                    <p>
+                        Lógica de rebote, obstáculos, paredes y detección de impacto para generar tensión en cada movimiento.
+                    </p>
+                </div>
+
+                <div class="tech-card">
+                    <h3>🔥 Modo Fever</h3>
+                    <p>
+                        Mecánica especial que premia la precisión del jugador al encadenar rebotes y activar momentos de alta intensidad.
+                    </p>
+                </div>
+
+                <div class="tech-card">
+                    <h3>🎁 Recompensas</h3>
+                    <p>
+                        Sistema de monedas, cajas misteriosas, cartas, skins y progresión para incentivar la repetición de partidas.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container fade-in-up">
+
+            <div class="tech-section-header">
+                <h2>Dependencias Clave</h2>
+                <p>
+                    Librerías y paquetes recomendados para la arquitectura del proyecto móvil, monetización, persistencia, audio y servicios externos.
+                </p>
+            </div>
+
+            <div class="deps-list">
+                <div class="dep-item">flame</div>
+                <div class="dep-item">flame_audio</div>
+                <div class="dep-item">google_mobile_ads</div>
+                <div class="dep-item">in_app_purchase</div>
+                <div class="dep-item">shared_preferences</div>
+                <div class="dep-item">flutter_native_splash</div>
+                <div class="dep-item">games_services</div>
+                <div class="dep-item">package_info_plus</div>
+                <div class="dep-item">url_launcher</div>
+                <div class="dep-item">intl</div>
+                <div class="dep-item">cupertino_icons</div>
+                <div class="dep-item">flutter_localizations</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="architecture" class="section-light">
+        <div class="container fade-in-up">
+
+            <div class="tech-section-header">
+                <h2>Arquitectura del Proyecto</h2>
+                <p>
+                    Estructura modular para separar el núcleo del juego, pantallas, servicios, economía, tienda, audio y persistencia local.
+                </p>
+            </div>
+
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+
+                <div class="code-content">
+<span class="tree-line"><span class="tree-folder">lib/</span></span>
+<span class="tree-line">├── <span class="tree-file">main.dart</span> <span class="tree-comment">// Punto de entrada, configuración inicial y arranque de servicios</span></span>
+<span class="tree-line">├── <span class="tree-folder">game/</span> <span class="tree-comment">// Núcleo del juego y lógica Flame</span></span>
+<span class="tree-line">│   ├── <span class="tree-folder">components/</span> <span class="tree-comment">// Player, obstáculos, paredes, monedas, power-ups</span></span>
+<span class="tree-line">│   ├── <span class="tree-folder">systems/</span> <span class="tree-comment">// Colisiones, física, spawning, fever, score</span></span>
+<span class="tree-line">│   └── <span class="tree-folder">managers/</span> <span class="tree-comment">// GameManager, ArenaManager, MatchManager</span></span>
+<span class="tree-line">├── <span class="tree-folder">screens/</span> <span class="tree-comment">// Menú principal, juego, tienda, ajustes, game over</span></span>
+<span class="tree-line">├── <span class="tree-folder">services/</span> <span class="tree-comment">// Ads, compras, audio, storage, analytics, restore purchases</span></span>
+<span class="tree-line">├── <span class="tree-folder">models/</span> <span class="tree-comment">// Skin, reward, loot box, player profile, purchase item</span></span>
+<span class="tree-line">├── <span class="tree-folder">ui/</span> <span class="tree-comment">// Widgets reutilizables, botones, cards, overlays</span></span>
+<span class="tree-line">└── <span class="tree-folder">l10n/</span> <span class="tree-comment">// Internacionalización y textos por idioma</span></span>
+                </div>
+            </div>
+
+            <div class="tech-grid">
+
+                <div class="tech-card">
+                    <h3>Patrones de Diseño</h3>
+                    <ul class="tech-list">
+                        <li><strong>Component-Based:</strong> entidades separadas para jugador, obstáculos, recompensas y elementos de arena.</li>
+                        <li><strong>Service Layer:</strong> servicios independientes para anuncios, compras, audio y almacenamiento.</li>
+                        <li><strong>Overlay UI:</strong> separación entre lógica Flame y pantallas Flutter para menús, tienda y ajustes.</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <h3>Optimización</h3>
+                    <ul class="tech-list">
+                        <li><strong>Object Pooling:</strong> reutilización de obstáculos y efectos para evitar picos de memoria.</li>
+                        <li><strong>Asset Optimization:</strong> imágenes comprimidas y audio optimizado para cargas rápidas.</li>
+                        <li><strong>Mobile Performance:</strong> ajustes para mantener fluidez en dispositivos de gama media.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container fade-in-up">
+
+            <div class="tech-section-header">
+                <h2>Ficha Técnica</h2>
+                <p>
+                    Resumen de sistemas internos y decisiones técnicas aplicadas para sostener la experiencia arcade.
+                </p>
+            </div>
+            
+            <div class="tech-grid">
+
+                <div class="tech-card">
+                    <h3>Gameplay Core</h3>
+                    <ul class="tech-list">
+                        <li>Motor de física 2D para rebotes y colisiones.</li>
+                        <li>Sistema de dificultad progresiva.</li>
+                        <li>Control táctil de baja latencia.</li>
+                        <li>Modo Fever basado en encadenamiento de acciones.</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <h3>Economía y Progresión</h3>
+                    <ul class="tech-list">
+                        <li>Sistema de monedas y recompensas.</li>
+                        <li>Cajas misteriosas y rarezas de skins.</li>
+                        <li>Compras dentro de la aplicación.</li>
+                        <li>Restauración de compras no consumibles.</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <h3>Servicios</h3>
+                    <ul class="tech-list">
+                        <li>Publicidad recompensada e interstitials.</li>
+                        <li>Persistencia local de progreso.</li>
+                        <li>Soporte para políticas de privacidad y términos.</li>
+                        <li>Preparación para integración con servicios externos.</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <h3>Experiencia Mobile</h3>
+                    <ul class="tech-list">
+                        <li>Diseño orientado a pantallas verticales.</li>
+                        <li>Interfaz adaptable a Android e iOS.</li>
+                        <li>Animaciones ligeras y respuesta rápida.</li>
+                        <li>Assets pensados para carga eficiente.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container fade-in-up">
+
+            <div class="tech-section-header">
+                <h2>Visualización Técnica</h2>
+                <p>
+                    Espacio para mostrar capturas de depuración, prototipos, diagramas o evidencia visual del desarrollo.
+                </p>
+            </div>
+
+            <div class="tech-screens">
+
+                <div class="screen-card">
+                    <img 
+                        src="assets/images/tech/debug_view.webp" 
+                        alt="Vista técnica de hitboxes y colisiones de Bounce Royale"
+                    >
+                </div>
+
+                <div class="screen-card">
+                    <img 
+                        src="assets/images/tech/architecture_diagram.webp" 
+                        alt="Diagrama de arquitectura de Bounce Royale"
+                    >
+                </div>
+
+                <div class="screen-card">
+                    <img 
+                        src="assets/images/tech/performance_profiler.webp" 
+                        alt="Vista de rendimiento y profiler de Bounce Royale"
+                    >
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-dark tech-cta">
+        <div class="container fade-in-up">
+
+            <h2>¿Interesado en el proyecto?</h2>
+
+            <p>
+                Bounce Royale demuestra experiencia en desarrollo móvil, arquitectura modular, diseño de sistemas de juego, monetización y construcción de interfaces responsivas.
             </p>
-        </section>
-    </main>
+            
+            <div class="tech-actions">
+                <a 
+                    href="https://github.com/llCaballeroll" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="btn btn-ios"
+                >
+                    Ver GitHub
+                </a>
+
+                <a 
+                    href="mailto:luis.caballero1199@outlook.com" 
+                    class="btn btn-android"
+                >
+                    Contactar Desarrollador
+                </a>
+            </div>
+
+        </div>
+    </section>
 
     <footer>
-        <p class="impact-text" style="color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 1rem;">BOUNCE ROYALE</p>
-        <p>© 2026 Luis Angel Caballero Jardon. Todos los derechos reservados.</p>
-        <p style="margin-top: 1rem; font-size: 0.8rem;">
-            <a href="terms.html">Términos de Servicio</a> | <a href="privacy.html">Política de Privacidad</a>
-        </p>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="presskit.html">Press Kit</a>
+                <a href="privacy.html">Privacidad</a>
+                <a href="terms.html">Términos</a>
+            </div>
+
+            <div class="footer-copy">
+                <p>&copy; 2026 Bounce Royale. Luis Angel Caballero Jardón.</p>
+                <p class="location">Documentación Técnica v1.0</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll(".fade-in-up").forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
 
 </body>
 </html>
