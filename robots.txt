@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://llcaballeroll.github.io/bounce_royale_web/sitemap.xml
