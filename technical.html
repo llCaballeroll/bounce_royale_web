@@ -1,228 +1,130 @@
 <!DOCTYPE html>
-<html lang="es-MX" class="no-js">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Ficha técnica · Bounce Royale</title>
-    <meta name="description" content="Ficha técnica de Bounce Royale: requisitos, Flutter y Flame, estructura del proyecto, anuncios, compras, ranking y datos guardados en el teléfono.">
-    <meta name="theme-color" content="#0a1630">
-    <link rel="canonical" href="https://llcaballeroll.github.io/bounce_royale_web/technical.html">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Bounce Royale">
-    <meta property="og:locale" content="es_MX">
-    <meta property="og:title" content="Ficha técnica · Bounce Royale">
-    <meta property="og:description" content="Requisitos, tecnología y estructura de Bounce Royale.">
-    <meta property="og:url" content="https://llcaballeroll.github.io/bounce_royale_web/technical.html">
-    <meta property="og:image" content="https://llcaballeroll.github.io/bounce_royale_web/assets/img/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Bounce Royale: la bola naranja con corona sobre el cielo del juego">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ficha técnica · Bounce Royale">
-    <meta name="twitter:description" content="Requisitos, tecnología y estructura de Bounce Royale.">
-    <meta name="twitter:image" content="https://llcaballeroll.github.io/bounce_royale_web/assets/img/og-image.jpg">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
-    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <script>document.documentElement.classList.remove('no-js');</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>How it's made · Bounce Royale</title>
+  <meta name="description" content="How Bounce Royale is built: Flutter for the menus, Flame for the game, and privacy by design.">
+  <meta name="theme-color" content="#0a1630">
+  <link rel="canonical" href="https://llcaballeroll.github.io/bounce_royale_web/technical.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bounce Royale">
+  <meta property="og:title" content="How it's made · Bounce Royale">
+  <meta property="og:description" content="How Bounce Royale is built: Flutter for the menus, Flame for the game, and privacy by design.">
+  <meta property="og:url" content="https://llcaballeroll.github.io/bounce_royale_web/technical.html">
+  <meta property="og:image" content="https://llcaballeroll.github.io/bounce_royale_web/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
-    <nav class="navbar" aria-label="Principal">
-        <div class="container nav-inner">
-            <a href="index.html" class="brand" aria-label="Bounce Royale, inicio"><img src="assets/img/icon-192.png" alt="" width="36" height="36">Bounce Royale</a>
-            <div class="nav-links">
-                <a href="index.html">Inicio</a>
-                <a href="presskit.html">Press kit</a>
-                <a href="technical.html" aria-current="page">Ficha técnica</a>
-                <a href="privacy.html">Privacidad</a>
-                <a href="terms.html">Términos</a>
-            </div>
-            <a href="index.html#descargar" class="nav-cta" data-smart-download>Descargar</a>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav">
+    <nav class="wrap nav-inner" aria-label="Main">
+      <a class="brand" href="./"><img src="assets/img/icon-192.png" alt="" width="30" height="30">Bounce Royale</a>
+      <div class="nav-links">
+        <a href="./">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <a class="lang" href="es/" hreflang="es" lang="es"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span>Español</span></a>
+      <a class="btn" href="./#get" data-smart-download>Get it free</a>
     </nav>
-    <div class="subnav" aria-label="Secciones del sitio">
-        <a href="index.html">Inicio</a>
-        <a href="presskit.html">Press kit</a>
-        <a href="technical.html" aria-current="page">Ficha técnica</a>
-        <a href="privacy.html">Privacidad</a>
-        <a href="terms.html">Términos</a>
+  </header>
+
+  <main id="main" class="doc">
+    <div class="wrap">
+      <p class="eyebrow">Under the hood</p>
+      <h1>How it's made</h1>
+      <p class="lead">One Dart codebase for iPhone and Android: Flutter for the menus, Flame for the game.</p>
+      <div class="chips" style="justify-content:flex-start"><span class="chip">Flutter</span><span class="chip">Flame</span><span class="chip">Dart 3</span><span class="chip">iOS 15+</span><span class="chip">Android 7.0+</span></div>
+
+      <h2>At a glance</h2>
+      <dl class="spec">
+        <dt>iPhone</dt><dd>iOS 15.0 or later</dd>
+        <dt>Android</dt><dd>Android 7.0 or later (API 24)</dd>
+        <dt>Android ID</dt><dd><code>com.luiscaballero.bounceroyale</code></dd>
+        <dt>Languages</dt><dd>16</dd>
+        <dt>Account</dt><dd>Not needed. Progress (record, skins, cards, boxes and coins) is stored on the phone.</dd>
+        <dt>Leaderboard</dt><dd>Game Center on iPhone and Google Play Games on Android. On Android, sign-in is only requested when you tap the leaderboard button.</dd>
+        <dt>Ads</dt><dd>Google AdMob: a banner only during a match, an ad when the app opens and rewarded videos for free boxes. Consent through Google UMP.</dd>
+        <dt>Purchases</dt><dd>Box packs and "Remove ads" (non-consumable), with restore purchases. All optional.</dd>
+        <dt>Own server</dt><dd>None. There's no developer backend.</dd>
+      </dl>
+
+      <h2>The foundation</h2>
+      <div class="cards" style="margin-top:16px">
+        <article class="card"><h3>Game engine</h3><p><strong>Flame</strong> runs the match: the ball, the spiked pipes, the coins and Fever Mode are game components. Adventure Mode and VS Mode are two separate Flame games.</p></article>
+        <article class="card"><h3>Interface</h3><p><strong>Flutter</strong> draws the home screen, the Trophy Road, the shop, settings, the tutorial and the VS podium, using the Anton font with a black outline like in the game.</p></article>
+        <article class="card"><h3>Boxes and cards</h3><p>Each box gives 5 cards; each card is drawn from the 16 box skins with the same probability. The odds are shown in the app.</p></article>
+        <article class="card"><h3>Sharing</h3><p>The record card is drawn on the phone, saved as a temporary image and shared with the system share sheet.</p></article>
+      </div>
+
+      <h2>Project structure</h2>
+      <p>Game logic lives apart from the interface, and external services have their own folder.</p>
+<pre class="tree">lib/
+├── main.dart              // startup, languages and ads
+├── game/
+│   ├── world/             // Adventure Mode and VS Mode
+│   ├── components/        // pipe and coin
+│   ├── managers/          // pipe spawning
+│   ├── box_loot.dart      // boxes, cards and rarities
+│   └── progression.dart   // level skins every 50 points
+├── services/              // ads, purchases and sound
+├── ui/
+│   ├── screens/           // home, levels, shop, settings, tutorial
+│   └── widgets/           // odds, record card, VS podium
+└── l10n/                  // translations</pre>
+
+      <h2>Main dependencies</h2>
+      <dl class="spec">
+        <dt><code>flame</code></dt><dd>2D engine and game loop</dd>
+        <dt><code>flame_audio</code></dt><dd>Music and sound effects</dd>
+        <dt><code>google_mobile_ads</code></dt><dd>AdMob and UMP consent</dd>
+        <dt><code>in_app_purchase</code></dt><dd>App Store and Google Play purchases</dd>
+        <dt><code>games_services</code></dt><dd>Game Center and Google Play Games</dd>
+        <dt><code>share_plus</code></dt><dd>Sharing the record card</dd>
+        <dt><code>shared_preferences</code></dt><dd>Progress saved on the phone</dd>
+        <dt><code>flutter_localization</code></dt><dd>Translations</dd>
+        <dt><code>vibration</code></dt><dd>Vibration (can be turned off in Settings)</dd>
+      </dl>
+
+      <h2>Privacy by design</h2>
+      <ul>
+        <li><strong>No sign-up:</strong> no name, email or phone number.</li>
+        <li><strong>Local progress</strong> with <code>shared_preferences</code>; it's deleted when you uninstall the app.</li>
+        <li><strong>No own server:</strong> the developer receives no match data.</li>
+        <li><strong>Google AdMob</strong> with <strong>UMP</strong> consent and a "Privacy options" button in Settings.</li>
+        <li><strong>Apple</strong> and <strong>Google</strong> process purchases; <strong>Game Center</strong> and <strong>Google Play Games</strong> keep the leaderboard.</li>
+      </ul>
+      <p>The game's code is private, but I'm happy to talk about how it's made: <a href="mailto:soporte.bounceroyale@outlook.com?subject=Bounce%20Royale%20-%20Tech">soporte.bounceroyale@outlook.com</a> · <a href="https://github.com/llCaballeroll" target="_blank" rel="noopener">GitHub</a></p>
     </div>
+  </main>
 
-    <main id="contenido">
-        <header class="page-hero">
-            <div class="container">
-                <span class="eyebrow">Ficha técnica</span>
-                <h1>Cómo está hecho</h1>
-                <p>Un solo código en Dart para iPhone y Android: Flutter para los menús y Flame para el juego.</p>
-                <div class="badges">
-                    <span class="badge">Flutter</span>
-                    <span class="badge">Flame</span>
-                    <span class="badge">Dart 3.11+</span>
-                    <span class="badge">iOS 15+</span>
-                    <span class="badge">Android 7.0+</span>
-                    <span class="badge">v1.0.2</span>
-                </div>
-            </div>
-        </header>
-
-        <section style="padding-top: clamp(2rem,5vw,3rem);">
-            <div class="container">
-                <div class="section-head left reveal">
-                    <h2>Datos generales</h2>
-                </div>
-                <dl class="spec reveal">
-                    <div><dt>Versión</dt><dd>1.0.2</dd></div>
-                    <div><dt>iPhone</dt><dd>iOS 15.0 o posterior</dd></div>
-                    <div><dt>Android</dt><dd>Android 7.0 o posterior (API 24)</dd></div>
-                    <div><dt>Identificador Android</dt><dd><code>com.luiscaballero.bounceroyale</code></dd></div>
-                    <div><dt>Idiomas</dt><dd>English, Español, Português, Français, Deutsch, Русский, Bahasa Indonesia, 中文, 日本語, 한국어</dd></div>
-                    <div><dt>Cuenta</dt><dd>No se necesita. El progreso (récord, skins, cartas, cajas y monedas) se guarda en el teléfono.</dd></div>
-                    <div><dt>Ranking</dt><dd>Game Center en iPhone y Google Play Juegos en Android. En Android solo se pide iniciar sesión al tocar el botón de ranking.</dd></div>
-                    <div><dt>Anuncios</dt><dd>Google AdMob: banner solo durante la partida, anuncio al abrir la app y video con recompensa para cajas gratis. Consentimiento con Google UMP.</dd></div>
-                    <div><dt>Compras</dt><dd>Paquetes de cajas y «Quitar anuncios» (no consumible), con opción de restaurar compras. Todas son opcionales.</dd></div>
-                    <div><dt>Servidor propio</dt><dd>Ninguno. No hay backend del desarrollador.</dd></div>
-                </dl>
-            </div>
-        </section>
-
-        <section class="band">
-            <div class="container">
-                <div class="section-head left reveal">
-                    <h2>La base</h2>
-                </div>
-                <div class="tech-grid">
-                    <div class="tech-card reveal"><h3>Motor de juego</h3><p><strong>Flame</strong> mueve la partida: la bola, las tuberías con picos, las monedas y el Modo Fever son componentes del juego. El Modo Aventura y el Modo VS son dos juegos de Flame separados.</p></div>
-                    <div class="tech-card reveal"><h3>Interfaz</h3><p><strong>Flutter</strong> dibuja el inicio, el Camino de trofeos, la tienda, los ajustes, el tutorial y el podio del Modo VS, con la fuente Anton y contorno negro como en el juego.</p></div>
-                    <div class="tech-card reveal"><h3>Cajas y cartas</h3><p>Cada caja entrega 5 cartas; cada carta se elige entre las 16 skins de caja con la misma probabilidad. Las probabilidades se muestran en la app.</p></div>
-                    <div class="tech-card reveal"><h3>Compartir</h3><p>La tarjeta de récord se dibuja en el teléfono, se guarda como imagen temporal y se comparte con la hoja nativa del sistema.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="section-head left reveal">
-                    <h2>Estructura del proyecto</h2>
-                    <p>La lógica del juego vive separada de la interfaz, y los servicios externos tienen su propia carpeta.</p>
-                </div>
-                <div class="code-window reveal">
-                    <div class="code-bar"><i></i><i></i><i></i><span>crazy_ball/lib</span></div>
-<pre><span class="c-dir">lib/</span>
-├── main.dart                    <span class="c-cm">// arranque, idiomas y anuncios</span>
-├── <span class="c-dir">game/</span>
-│   ├── <span class="c-dir">world/</span>                   <span class="c-cm">// Modo Aventura y Modo VS</span>
-│   ├── <span class="c-dir">components/</span>              <span class="c-cm">// tubería y moneda</span>
-│   ├── <span class="c-dir">managers/</span>                <span class="c-cm">// aparición de tuberías</span>
-│   ├── box_loot.dart            <span class="c-cm">// cajas, cartas y rarezas</span>
-│   └── progression.dart         <span class="c-cm">// skins de nivel cada 50 puntos</span>
-├── <span class="c-dir">services/</span>                    <span class="c-cm">// anuncios, compras y sonido</span>
-├── <span class="c-dir">ui/</span>
-│   ├── <span class="c-dir">screens/</span>                 <span class="c-cm">// inicio, niveles, tienda, ajustes, tutorial</span>
-│   └── <span class="c-dir">widgets/</span>                 <span class="c-cm">// probabilidades, récord para compartir, podio VS</span>
-└── <span class="c-dir">l10n/</span>                        <span class="c-cm">// textos en 10 idiomas</span></pre>
-                </div>
-            </div>
-        </section>
-
-        <section class="band">
-            <div class="container">
-                <div class="section-head left reveal">
-                    <h2>Dependencias principales</h2>
-                    <p>Paquetes de <code style="font-family:var(--font-mono)">pubspec.yaml</code> y para qué se usan.</p>
-                </div>
-                <div class="deps reveal">
-                    <div class="dep"><code>flame</code><span>Motor 2D y ciclo del juego</span></div>
-                    <div class="dep"><code>flame_audio</code><span>Música y efectos</span></div>
-                    <div class="dep"><code>google_mobile_ads</code><span>AdMob y consentimiento UMP</span></div>
-                    <div class="dep"><code>in_app_purchase</code><span>Compras con App Store y Google Play</span></div>
-                    <div class="dep"><code>games_services</code><span>Game Center y Google Play Juegos</span></div>
-                    <div class="dep"><code>share_plus</code><span>Compartir la tarjeta de récord</span></div>
-                    <div class="dep"><code>path_provider</code><span>Archivo temporal de la imagen</span></div>
-                    <div class="dep"><code>shared_preferences</code><span>Progreso guardado en el teléfono</span></div>
-                    <div class="dep"><code>flutter_localization</code><span>Textos en 10 idiomas</span></div>
-                    <div class="dep"><code>flutter_animate</code><span>Animaciones de interfaz</span></div>
-                    <div class="dep"><code>animate_do</code><span>Animaciones de entrada</span></div>
-                    <div class="dep"><code>vibration</code><span>Vibración (se apaga en Ajustes)</span></div>
-                    <div class="dep"><code>package_info_plus</code><span>Número de versión en Ajustes</span></div>
-                    <div class="dep"><code>url_launcher</code><span>Enlaces legales y de soporte</span></div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="section-head left reveal">
-                    <h2>Privacidad por diseño</h2>
-                </div>
-                <div class="split">
-                    <div class="panel reveal">
-                        <h3>En el teléfono</h3>
-                        <ul class="checklist">
-                            <li><strong>Sin registro:</strong> no se pide nombre, correo ni teléfono.</li>
-                            <li><strong>Progreso local</strong> con <code>shared_preferences</code>; se borra al desinstalar la app.</li>
-                            <li><strong>Sin servidor propio:</strong> el desarrollador no recibe datos de las partidas.</li>
-                        </ul>
-                    </div>
-                    <div class="panel reveal">
-                        <h3>Servicios de terceros</h3>
-                        <ul class="checklist">
-                            <li><strong>Google AdMob</strong> con consentimiento <strong>UMP</strong> y botón «Opciones de privacidad» en Ajustes.</li>
-                            <li><strong>Apple</strong> y <strong>Google</strong> procesan las compras.</li>
-                            <li><strong>Game Center</strong> y <strong>Google Play Juegos</strong> guardan el ranking.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="final-card reveal" style="margin-top: clamp(3rem,6vw,4.5rem); text-align:center;">
-                    <h2 class="outline" style="font-size: clamp(1.9rem,4.4vw,2.8rem);">¿Quieres saber más?</h2>
-                    <p>El código del juego es privado, pero con gusto platico sobre cómo está hecho.</p>
-                    <div class="store-row" style="justify-content:center;">
-                        <a class="btn primary" href="mailto:luis.caballero1199@outlook.com?subject=Bounce%20Royale%20-%20T%C3%A9cnico">Escribir al desarrollador</a>
-                        <a class="btn" style="background:rgba(255,255,255,.8); color:var(--ink); border-color:transparent;" href="https://github.com/llCaballeroll" target="_blank" rel="noopener">Perfil de GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <a href="index.html" class="brand"><img src="assets/img/icon-192.png" alt="" width="36" height="36">Bounce Royale</a>
-                    <p>Un juego independiente hecho en Metepec, Estado de México, por Luis Angel Caballero Jardón.</p>
-                </div>
-                <div>
-                    <h4>Juego</h4>
-                    <ul>
-                        <li><a href="https://apps.apple.com/mx/app/bounce-royale-jump-vs/id6761583939" target="_blank" rel="noopener">App Store</a></li>
-                        <li><a href="https://play.google.com/store/apps/details?id=com.luiscaballero.bounceroyale&amp;hl=es_MX" target="_blank" rel="noopener">Google Play</a></li>
-                        <li><a href="presskit.html">Press kit</a></li>
-                        <li><a href="technical.html">Ficha técnica</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Ayuda y legal</h4>
-                    <ul>
-                        <li><a href="mailto:luis.caballero1199@outlook.com?subject=Soporte%20-%20Bounce%20Royale">Soporte</a></li>
-                        <li><a href="privacy.html">Política de privacidad</a></li>
-                        <li><a href="terms.html">Términos y condiciones</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2026 Luis Angel Caballero Jardón. Todos los derechos reservados.</span>
-                <span>App Store y Game Center son marcas de Apple Inc. Google Play es una marca de Google LLC.</span>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/site.js" defer></script>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="presskit.html">Press kit</a>
+        <a href="technical.html">How it's made</a>
+        <a href="es/" hreflang="es" lang="es">Español</a>
+      </div>
+      <p><a href="mailto:soporte.bounceroyale@outlook.com">soporte.bounceroyale@outlook.com</a></p>
+      <p>App Store and Game Center are trademarks of Apple Inc. Google Play is a trademark of Google LLC.</p>
+      <p>© 2026 Luis Angel Caballero Jardón · Bounce Royale: Jump &amp; VS</p>
+    </div>
+  </footer>
+  <script src="js/site.js" defer></script>
 </body>
 </html>

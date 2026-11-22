@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Bounce Royale: Jump &amp; VS · Toca, rebota y sé la última bola</title>
+  <meta name="description" content="Arcade de un toque. Rebota de pared a pared, esquiva obstáculos, activa el Modo Fiebre y gana el Modo VS contra 5 rivales de IA. 6 mundos, 26 skins y 16 idiomas. Gratis en iPhone y Android.">
+  <meta name="theme-color" content="#0a1630">
+  <meta name="apple-itunes-app" content="app-id=6761583939">
+  <link rel="canonical" href="https://llcaballeroll.github.io/bounce_royale_web/es/">
+  <link rel="alternate" hreflang="en" href="https://llcaballeroll.github.io/bounce_royale_web/">
+  <link rel="alternate" hreflang="es" href="https://llcaballeroll.github.io/bounce_royale_web/es/">
+  <link rel="alternate" hreflang="x-default" href="https://llcaballeroll.github.io/bounce_royale_web/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bounce Royale">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Bounce Royale: Jump &amp; VS · ¿Puedes superar mi récord?">
+  <meta property="og:description" content="Arcade de un toque: rebota de pared a pared, esquiva obstáculos y sé la última bola en pie contra 5 rivales de IA. 6 mundos y 26 skins. Gratis en iPhone y Android.">
+  <meta property="og:url" content="https://llcaballeroll.github.io/bounce_royale_web/es/">
+  <meta property="og:image" content="https://llcaballeroll.github.io/bounce_royale_web/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bounce Royale: la bola naranja con corona sobre el cielo del juego">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bounce Royale: Jump &amp; VS · ¿Puedes superar mi récord?">
+  <meta name="twitter:description" content="Arcade de un toque. 6 mundos, Modo VS contra 5 rivales de IA y 26 skins. Gratis en iPhone y Android.">
+  <meta name="twitter:image" content="https://llcaballeroll.github.io/bounce_royale_web/assets/img/og-image.jpg">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/icon-192.png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;display=swap">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["VideoGame", "MobileApplication"],
+    "name": "Bounce Royale: Jump & VS",
+    "alternateName": "Bounce Royale",
+    "url": "https://llcaballeroll.github.io/bounce_royale_web/es/",
+    "description": "Arcade de un toque: rebota de pared a pared, esquiva obstáculos, activa el Modo Fiebre y sé la última bola en pie contra 5 rivales de IA.",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "GameApplication",
+    "genre": "Arcade",
+    "playMode": "SinglePlayer",
+    "gamePlatform": ["iPhone", "Android"],
+    "inLanguage": ["en", "es", "pt", "fr", "de", "it", "ru", "pl", "tr", "id", "vi", "th", "ja", "ko", "zh-Hans", "zh-Hant"],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "Luis Angel Caballero Jardón" },
+    "image": "https://llcaballeroll.github.io/bounce_royale_web/assets/img/og-image.jpg",
+    "screenshot": "https://llcaballeroll.github.io/bounce_royale_web/assets/img/shots/es-vs-760.webp",
+    "sameAs": [
+      "https://apps.apple.com/app/id6761583939",
+      "https://play.google.com/store/apps/details?id=com.luiscaballero.bounceroyale"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="nav">
+    <nav class="wrap nav-inner" aria-label="Principal">
+      <a class="brand" href="./"><img src="../assets/img/icon-192.png" alt="" width="30" height="30">Bounce Royale</a>
+      <div class="nav-links">
+        <a href="#play">Cómo se juega</a>
+        <a href="#fever">Fiebre</a>
+        <a href="#adventure">Aventura</a>
+        <a href="#vs">VS</a>
+        <a href="#skins">Skins</a>
+        <a href="support.html">Soporte</a>
+      </div>
+      <a class="lang" href="../" hreflang="en" lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span>English</span></a>
+      <a class="btn" href="#get" data-smart-download>Descargar</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="tile dark hero" aria-labelledby="hero-title">
+      <div class="hero-skins" aria-hidden="true">
+        <img class="s1" src="../assets/img/game/skins/ball_champion_01.webp" alt="" width="220" height="220">
+        <img class="s2" src="../assets/img/game/skins/ball_legendary_01.webp" alt="" width="220" height="220">
+        <img class="s3" src="../assets/img/game/skins/ball_level_04.webp" alt="" width="220" height="220">
+        <img class="s4" src="../assets/img/game/skins/ball_epic_02.webp" alt="" width="220" height="220">
+      </div>
+      <div class="wrap">
+        <p class="eyebrow">Bounce Royale: Jump &amp; VS</p>
+        <h1 id="hero-title" class="display">Toca. Rebota.<br><span class="c-gold">Sé la última bola.</span></h1>
+        <p class="lead">Un arcade de un solo toque. Rebota de pared a pared, esquiva los obstáculos y aguanta más que 5 rivales de IA en el Modo VS.</p>
+        <div class="stores">
+          <a class="store" href="https://apps.apple.com/app/id6761583939" target="_blank" rel="noopener" data-store="ios">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 1.43c0 1.14-.5 2.27-1.18 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.2-2.98.81-.94 2.15-1.64 3.25-1.68.03.13.06.28.06.43Zm4.56 15.71c-.03.07-.46 1.58-1.52 3.12-.94 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8C4 18.38 2.97 15.57 2.97 12.92c0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.67.95 3.6.95.86 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.37 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.95 4.45Z"/></svg>
+            <span><small>Descárgalo en el</small><strong>App Store</strong></span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.luiscaballero.bounceroyale" target="_blank" rel="noopener" data-store="android">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00c3ff" d="M3.6 1.8 13.8 12 3.6 22.2c-.37-.2-.6-.6-.6-1.1V2.9c0-.5.23-.9.6-1.1Z"/><path fill="#ffc400" d="m17.2 8.6 3.2 1.8c.9.5.9 1.8 0 2.3l-3.2 1.8-3.4-2.5Z"/><path fill="#00d26a" d="M3.6 1.8c.36-.22.82-.22 1.2 0l12.4 6.8-3.4 3.4Z"/><path fill="#ff3a44" d="m13.8 12 3.4 3.4-12.4 6.8c-.38.22-.84.22-1.2 0Z"/></svg>
+            <span><small>Disponible en</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+        <p class="fineprint">Gratis · Sin registro · Game Center y Google Play Juegos</p>
+      </div>
+      <div class="stage crop">
+        <img class="screen side" src="../assets/img/shots/es-record-420.webp" alt="Fin del juego con un nuevo récord de 1500 puntos" width="420" height="913" loading="lazy">
+        <img class="screen" src="../assets/img/shots/es-vs-760.webp" srcset="../assets/img/shots/es-vs-420.webp 420w, ../assets/img/shots/es-vs-760.webp 760w" sizes="(max-width: 640px) 78vw, 330px" alt="Partida en curso: la bola vuela entre tuberías verdes con picos" width="760" height="1652" fetchpriority="high">
+        <img class="screen side" src="../assets/img/shots/es-podium-420.webp" alt="Podio del Modo VS con el ganador coronado" width="420" height="913" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Cifras -->
+    <section class="tile alt pad-b" aria-label="El juego en cifras">
+      <div class="wrap">
+        <div class="facts reveal">
+          <div class="f1"><b>26</b><span>skins para coleccionar</span></div>
+          <div class="f2"><b>6</b><span>mundos en Aventura</span></div>
+          <div class="f3"><b>5</b><span>rivales de IA en VS</span></div>
+          <div class="f4"><b>16</b><span>idiomas</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo se juega -->
+    <section id="play" class="tile pad-b" aria-labelledby="play-title">
+      <div class="wrap">
+        <p class="eyebrow">Cómo se juega</p>
+        <h2 id="play-title" class="headline reveal">Un dedo.<br><span class="c-orange">Cero descanso.</span></h2>
+        <p class="lead reveal">Se aprende en segundos. Lo difícil es seguir con vida.</p>
+        <ol class="rules reveal">
+          <li>
+            <img class="art" src="../assets/img/game/skins/ball_default.webp" alt="" width="220" height="219" loading="lazy">
+            <strong>Toca para volar</strong>
+            <span>Cada toque impulsa la bola hacia arriba. Encuentra el ritmo y mantente en el aire.</span>
+          </li>
+          <li>
+            <img class="art" src="../assets/img/game/skins/ball_level_01.webp" alt="" width="220" height="217" loading="lazy">
+            <strong>Rebota de pared a pared</strong>
+            <span>La bola cruza la pantalla de una pared a la otra. Cada rebote en una pared es un punto.</span>
+          </li>
+          <li>
+            <svg class="art" viewBox="12 -2 56 82" aria-hidden="true"><defs><linearGradient id="pipe" x1="0" x2="1"><stop offset="0" stop-color="#3f8f3a"/><stop offset=".45" stop-color="#9ccc65"/><stop offset="1" stop-color="#2e6b2a"/></linearGradient></defs><rect x="24" y="0" width="32" height="34" fill="url(#pipe)" stroke="#0c2a0a" stroke-width="2"/><rect x="19" y="28" width="42" height="10" rx="2" fill="url(#pipe)" stroke="#0c2a0a" stroke-width="2"/><path d="M22 38l3 7 3-7 3 7 3-7 3 7 3-7 3 7 3-7 3 7 3-7 3 7 3-7" fill="#cfd8dc" stroke="#37474f" stroke-width="1.5" stroke-linejoin="round"/><circle cx="40" cy="66" r="9" fill="#ff5722" stroke="#000" stroke-width="2"/><circle cx="42" cy="64" r="3.2" fill="#fff"/><circle cx="42.6" cy="64.4" r="1.6" fill="#000"/></svg>
+            <strong>Esquiva los obstáculos</strong>
+            <span>Pasa por los huecos entre las tuberías con picos. Un choque y se acaba la partida.</span>
+          </li>
+          <li>
+            <svg class="art" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="28" fill="#ffca28" stroke="#8d5a00" stroke-width="3"/><circle cx="40" cy="40" r="20" fill="none" stroke="#ffe082" stroke-width="3"/><path d="M36 28h8v24h-8z" fill="#f9a825"/><circle cx="30" cy="27" r="4" fill="#fff8e1" opacity=".85"/></svg>
+            <strong>Atrapa monedas</strong>
+            <span>Las monedas te esperan en los huecos. Ve por ellas si te atreves.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Modo Fiebre -->
+    <section id="fever" class="tile dark deep pad-b" aria-labelledby="fever-title">
+      <div class="wrap">
+        <p class="eyebrow">Modo Fiebre</p>
+        <h2 id="fever-title" class="headline reveal">10 rebotes seguidos.<br><span class="c-orange">Nada te detiene.</span></h2>
+        <p class="lead reveal">Encadena 10 rebotes sin fallar y la bola se enciende: eres invencible y rompes el siguiente obstáculo.</p>
+        <div class="chips reveal"><span class="chip">10 rebotes seguidos</span><span class="chip">Invencible</span><span class="chip">Rompe el siguiente obstáculo</span></div>
+        <div class="feature reveal">
+          <img class="art" src="../assets/img/key-art.webp" alt="Arte del Modo Fiebre: una bola ninja envuelta en fuego destroza una tubería" width="1200" height="800" loading="lazy">
+          <img class="screen" src="../assets/img/shots/es-fever-760.webp" srcset="../assets/img/shots/es-fever-420.webp 420w, ../assets/img/shots/es-fever-760.webp 760w" sizes="(max-width: 760px) 78vw, 300px" alt="Partida en curso con el marcador en 18 y una moneda junto a la tubería" width="760" height="1652" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Modo Aventura -->
+    <section id="adventure" class="tile alt pad-b" aria-labelledby="adventure-title">
+      <div class="wrap">
+        <p class="eyebrow">Modo Aventura · Camino de trofeos</p>
+        <h2 id="adventure-title" class="headline reveal">Seis mundos.<br><span class="c-orange">¿Hasta dónde llegas?</span></h2>
+        <p class="lead reveal">El mundo cambia mientras sube tu puntuación, del cielo azul a El Glitch. El Camino de trofeos te muestra cada mundo y cada skin que desbloquea tu récord.</p>
+        <ul class="worlds reveal">
+          <li><img src="../assets/img/game/worlds/n_1.webp" alt="" width="420" height="630" loading="lazy"><b>Cielo Claro</b><span>Desde el inicio</span></li>
+          <li><img src="../assets/img/game/worlds/n_2.webp" alt="" width="420" height="753" loading="lazy"><b>Noche Estelar</b><span>60 puntos</span></li>
+          <li><img src="../assets/img/game/worlds/n_3.webp" alt="" width="420" height="753" loading="lazy"><b>Mundo Neón</b><span>150 puntos</span></li>
+          <li><img src="../assets/img/game/worlds/n_4.webp" alt="" width="420" height="753" loading="lazy"><b>Cueva de Lava</b><span>300 puntos</span></li>
+          <li><img src="../assets/img/game/worlds/n_5.webp" alt="" width="420" height="753" loading="lazy"><b>Galaxia Cero</b><span>500 puntos</span></li>
+          <li><img src="../assets/img/game/worlds/n_6.webp" alt="" width="420" height="753" loading="lazy"><b>El Glitch</b><span>1000 puntos</span></li>
+        </ul>
+      </div>
+      <div class="stage crop">
+        <img class="screen" src="../assets/img/shots/es-trophy-760.webp" srcset="../assets/img/shots/es-trophy-420.webp 420w, ../assets/img/shots/es-trophy-760.webp 760w" sizes="(max-width: 640px) 78vw, 330px" alt="Camino de trofeos con los mundos El Glitch y Galaxia Cero" width="760" height="1652" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Modo VS -->
+    <section id="vs" class="tile dark" aria-labelledby="vs-title">
+      <div class="wrap">
+        <p class="eyebrow">Modo VS</p>
+        <h2 id="vs-title" class="headline reveal">Tú contra 5 rivales de IA.<br><span class="c-red">Gana la última en pie.</span></h2>
+        <p class="lead reveal">Seis bolas en la misma arena: la tuya y cinco rivales controlados por el juego. Rebota, esquiva y aguanta más que todos.</p>
+        <ol class="steps reveal">
+          <li><strong>Seis bolas, una arena.</strong><span>Tú y 5 rivales de IA salen al mismo tiempo.</span></li>
+          <li><strong>Resiste.</strong><span>Cada rival que choca es uno menos entre tú y la corona.</span></li>
+          <li><strong>Sube al podio.</strong><span>Los tres primeros suben al podio y el ganador se lleva la corona.</span></li>
+        </ol>
+      </div>
+      <div class="stage crop">
+        <img class="screen" src="../assets/img/shots/es-vs-760.webp" srcset="../assets/img/shots/es-vs-420.webp 420w, ../assets/img/shots/es-vs-760.webp 760w" sizes="(max-width: 640px) 78vw, 330px" alt="Partida del Modo VS" width="760" height="1652" loading="lazy">
+        <img class="screen side" src="../assets/img/shots/es-podium-420.webp" alt="Podio del Modo VS con los tres primeros y la corona del ganador" width="420" height="913" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Skins -->
+    <section id="skins" class="tile pad-b" aria-labelledby="skins-title">
+      <div class="wrap">
+        <p class="eyebrow">Colección</p>
+        <h2 id="skins-title" class="headline reveal">26 skins.<br><span class="c-orange">Consíguelas todas.</span></h2>
+        <p class="lead reveal">Empiezas con la clásica. Tu mejor puntuación desbloquea 9 más, una cada 50 puntos. Las otras 16 salen de cajas misteriosas de 5 rarezas, con las probabilidades a la vista en el juego.</p>
+        <ul class="skins reveal" aria-label="Las 26 skins">
+          <li style="--c:var(--r-classic)"><img src="../assets/img/game/skins/ball_default.webp" alt="Skin clásica" width="220" height="219" loading="lazy"></li>
+          <li style="--c:var(--r-level)"><img src="../assets/img/game/skins/ball_level_01.webp" alt="Bola de Baloncesto, 50 puntos" width="220" height="217" loading="lazy"></li>
+          <li style="--c:var(--r-level)"><img src="../assets/img/game/skins/ball_level_02.webp" alt="Bola 8 Mágica, 100 puntos" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-level)"><img src="../assets/img/game/skins/ball_level_03.webp" alt="Ojo de Monstruo, 150 puntos" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-level)"><img src="../assets/img/game/skins/ball_level_04.webp" alt="Bola Ninja, 200 puntos" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-level)"><img src="../assets/img/game/skins/ball_level_05.webp" alt="Cyborg Ball, 250 puntos" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-level)"><img src="../assets/img/game/skins/ball_level_06.webp" alt="Núcleo de Fuego, 300 puntos" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-level)"><img src="../assets/img/game/skins/ball_level_07.webp" alt="Huevo de Dragón, 350 puntos" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-level)"><img src="../assets/img/game/skins/ball_level_08.webp" alt="Bola de Oro Puro, 400 puntos" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-level)"><img src="../assets/img/game/skins/ball_level_09.webp" alt="Diamante Supremo, 450 puntos" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-common)"><img src="../assets/img/game/skins/ball_common_01.webp" alt="Skin común" width="220" height="138" loading="lazy"></li>
+          <li style="--c:var(--r-common)"><img src="../assets/img/game/skins/ball_common_02.webp" alt="Skin común" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-common)"><img src="../assets/img/game/skins/ball_common_03.webp" alt="Skin común" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-common)"><img src="../assets/img/game/skins/ball_common_04.webp" alt="Skin común" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-rare)"><img src="../assets/img/game/skins/ball_rare_01.webp" alt="Skin rara" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-rare)"><img src="../assets/img/game/skins/ball_rare_02.webp" alt="Skin rara" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-rare)"><img src="../assets/img/game/skins/ball_rare_03.webp" alt="Skin rara" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-epic)"><img src="../assets/img/game/skins/ball_epic_01.webp" alt="Skin épica" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-epic)"><img src="../assets/img/game/skins/ball_epic_02.webp" alt="Skin épica" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-epic)"><img src="../assets/img/game/skins/ball_epic_03.webp" alt="Skin épica" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-legendary)"><img src="../assets/img/game/skins/ball_legendary_01.webp" alt="Skin legendaria" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-legendary)"><img src="../assets/img/game/skins/ball_legendary_02.webp" alt="Skin legendaria" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-legendary)"><img src="../assets/img/game/skins/ball_legendary_03.webp" alt="Skin legendaria" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-champion)"><img src="../assets/img/game/skins/ball_champion_01.webp" alt="Skin campeón" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-champion)"><img src="../assets/img/game/skins/ball_champion_02.webp" alt="Skin campeón" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-champion)"><img src="../assets/img/game/skins/ball_champion_03.webp" alt="Skin campeón" width="220" height="220" loading="lazy"></li>
+          <li style="--c:var(--r-legendary)"><img src="../assets/img/game/items/chest.webp" alt="Caja misteriosa" width="360" height="363" loading="lazy"></li>
+        </ul>
+        <div class="legend" aria-hidden="true">
+          <span><i style="--c:var(--r-classic)"></i>Clásica</span>
+          <span><i style="--c:var(--r-level)"></i>Por récord</span>
+          <span><i style="--c:var(--r-common)"></i>Común</span>
+          <span><i style="--c:var(--r-rare)"></i>Rara</span>
+          <span><i style="--c:var(--r-epic)"></i>Épica</span>
+          <span><i style="--c:var(--r-legendary)"></i>Legendaria</span>
+          <span><i style="--c:var(--r-champion)"></i>Campeón</span>
+        </div>
+        <table class="odds reveal">
+          <caption>Cada caja trae 5 cartas. Cada carta es una de las 16 skins de caja, todas con la misma probabilidad (6.25 %). Junta las cartas necesarias y la skin es tuya. <a href="terms.html#cajas">Todos los detalles</a>.</caption>
+          <thead><tr><th scope="col">Rareza</th><th scope="col">Skins</th><th scope="col">Probabilidad por carta</th><th scope="col">Cartas para desbloquear</th></tr></thead>
+          <tbody>
+            <tr style="--c:var(--r-common)"><th scope="row">Común</th><td>4</td><td>25 %</td><td>49</td></tr>
+            <tr style="--c:var(--r-rare)"><th scope="row">Rara</th><td>3</td><td>18.75 %</td><td>99</td></tr>
+            <tr style="--c:var(--r-epic)"><th scope="row">Épica</th><td>3</td><td>18.75 %</td><td>149</td></tr>
+            <tr style="--c:var(--r-legendary)"><th scope="row">Legendaria</th><td>3</td><td>18.75 %</td><td>199</td></tr>
+            <tr style="--c:var(--r-champion)"><th scope="row">Campeón</th><td>3</td><td>18.75 %</td><td>300</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="stage">
+        <img class="screen side" src="../assets/img/shots/es-boxes-420.webp" alt="Tienda con cajas misteriosas, la caja diaria gratis y una caja por ver un video" width="420" height="913" loading="lazy">
+        <img class="screen" src="../assets/img/shots/es-skins-760.webp" srcset="../assets/img/shots/es-skins-420.webp 420w, ../assets/img/shots/es-skins-760.webp 760w" sizes="(max-width: 640px) 78vw, 330px" alt="Colección de skins en la tienda" width="760" height="1652" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Récord y compartir -->
+    <section id="record" class="tile dark" aria-labelledby="record-title">
+      <div class="wrap">
+        <p class="eyebrow">Reta a tus amigos</p>
+        <h2 id="record-title" class="headline reveal">¿Pueden superar<br><span class="c-gold">tu récord?</span></h2>
+        <p class="lead reveal">Convierte tu mejor puntuación en una tarjeta con tu skin coronada y sube en el ranking de Game Center o Google Play Juegos.</p>
+        <ol class="steps reveal">
+          <li><strong>Toca tu récord.</strong><span>Ahí mismo, en el inicio.</span></li>
+          <li><strong>Recibe tu tarjeta.</strong><span>Tu skin con corona y tu mejor puntuación.</span></li>
+          <li><strong>Compártela.</strong><span>Como imagen, en la app que quieras.</span></li>
+        </ol>
+      </div>
+      <div class="stage crop">
+        <img class="screen side" src="../assets/img/shots/es-record-420.webp" alt="" width="420" height="913" loading="lazy">
+        <img class="screen" src="../assets/img/shots/es-share-760.webp" srcset="../assets/img/shots/es-share-420.webp 420w, ../assets/img/shots/es-share-760.webp 760w" sizes="(max-width: 640px) 78vw, 330px" alt="Tarjeta de récord con la skin coronada, el récord 1287 y la frase ¿Puedes superar mi récord?" width="760" height="1652" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="tile alt" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <h2 id="gallery-title" class="headline">Míralo de cerca.</h2>
+      </div>
+      <div class="gallery">
+        <div class="gallery-track" tabindex="0" role="group" aria-label="Capturas, desliza hacia los lados">
+          <figure><img class="screen" src="../assets/img/shots/es-vs-420.webp" alt="" width="420" height="913" loading="lazy"><figcaption>Modo VS</figcaption></figure>
+          <figure><img class="screen" src="../assets/img/shots/es-podium-420.webp" alt="" width="420" height="913" loading="lazy"><figcaption>El podio</figcaption></figure>
+          <figure><img class="screen" src="../assets/img/shots/es-fever-420.webp" alt="" width="420" height="913" loading="lazy"><figcaption>Modo Fiebre</figcaption></figure>
+          <figure><img class="screen" src="../assets/img/shots/es-record-420.webp" alt="" width="420" height="913" loading="lazy"><figcaption>Nuevo récord</figcaption></figure>
+          <figure><img class="screen" src="../assets/img/shots/es-skins-420.webp" alt="" width="420" height="913" loading="lazy"><figcaption>Tu colección</figcaption></figure>
+          <figure><img class="screen" src="../assets/img/shots/es-boxes-420.webp" alt="" width="420" height="913" loading="lazy"><figcaption>Cajas misteriosas</figcaption></figure>
+          <figure><img class="screen" src="../assets/img/shots/es-trophy-420.webp" alt="" width="420" height="913" loading="lazy"><figcaption>Camino de trofeos</figcaption></figure>
+          <figure><img class="screen" src="../assets/img/shots/es-share-420.webp" alt="" width="420" height="913" loading="lazy"><figcaption>Tarjeta de récord</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Descargar -->
+    <section id="get" class="tile pad-b" aria-labelledby="get-title">
+      <div class="wrap">
+        <p class="eyebrow">iPhone · Android</p>
+        <h2 id="get-title" class="headline reveal">Tu primer rebote<br><span class="c-orange">te espera.</span></h2>
+        <p class="lead reveal">Gratis, con anuncios. Una compra opcional los quita para siempre. No necesitas cuenta.</p>
+        <div class="stores reveal">
+          <a class="store" href="https://apps.apple.com/app/id6761583939" target="_blank" rel="noopener" data-store="ios">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.37 1.43c0 1.14-.5 2.27-1.18 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.2-2.98.81-.94 2.15-1.64 3.25-1.68.03.13.06.28.06.43Zm4.56 15.71c-.03.07-.46 1.58-1.52 3.12-.94 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8C4 18.38 2.97 15.57 2.97 12.92c0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.67.95 3.6.95.86 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.37 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.95 4.45Z"/></svg>
+            <span><small>Descárgalo en el</small><strong>App Store</strong></span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.luiscaballero.bounceroyale" target="_blank" rel="noopener" data-store="android">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00c3ff" d="M3.6 1.8 13.8 12 3.6 22.2c-.37-.2-.6-.6-.6-1.1V2.9c0-.5.23-.9.6-1.1Z"/><path fill="#ffc400" d="m17.2 8.6 3.2 1.8c.9.5.9 1.8 0 2.3l-3.2 1.8-3.4-2.5Z"/><path fill="#00d26a" d="M3.6 1.8c.36-.22.82-.22 1.2 0l12.4 6.8-3.4 3.4Z"/><path fill="#ff3a44" d="m13.8 12 3.4 3.4-12.4 6.8c-.38.22-.84.22-1.2 0Z"/></svg>
+            <span><small>Disponible en</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+        <div class="cards reveal">
+          <article class="card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#ce93d8" stroke-width="2"/><circle cx="9" cy="10" r="2.5" fill="#4ec0e9"/><circle cx="15" cy="10" r="2.5" fill="#ffca28"/><circle cx="12" cy="15.5" r="2.5" fill="#ff5252"/></svg>
+            <h3>Ranking</h3>
+            <p>Tu mejor puntuación se publica en Game Center en iPhone y en Google Play Juegos en Android.</p>
+          </article>
+          <article class="card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2" fill="#ffab40" stroke="#8d5a00" stroke-width="1.5"/><path d="M3 11h18M12 7v13" stroke="#8d5a00" stroke-width="1.5"/><path d="M8 7c-2-3 2-5 4 0 2-5 6-3 4 0" fill="none" stroke="#e53935" stroke-width="1.8"/></svg>
+            <h3>Una caja gratis cada día</h3>
+            <p>Reclama tu caja misteriosa diaria y gana más viendo un video corto.</p>
+          </article>
+          <article class="card">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#4ec0e9" stroke-width="2"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="#4ec0e9" stroke-width="1.6"/></svg>
+            <h3>16 idiomas</h3>
+            <p>Juega en tu idioma, del español y el inglés al 日本語 y el 한국어.</p>
+          </article>
+        </div>
+        <ul class="langs reveal" aria-label="Idiomas disponibles">
+          <li lang="en">English</li><li lang="es">Español</li><li lang="pt">Português</li><li lang="fr">Français</li><li lang="de">Deutsch</li><li lang="it">Italiano</li><li lang="ru">Русский</li><li lang="pl">Polski</li><li lang="tr">Türkçe</li><li lang="id">Bahasa Indonesia</li><li lang="vi">Tiếng Việt</li><li lang="th">ไทย</li><li lang="ja">日本語</li><li lang="ko">한국어</li><li lang="zh-Hans">简体中文</li><li lang="zh-Hant">繁體中文</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="support.html">Soporte</a>
+        <a href="privacy.html">Política de privacidad</a>
+        <a href="terms.html">Términos de uso</a>
+        <a href="../presskit.html">Press kit</a>
+        <a href="../technical.html">Cómo está hecho</a>
+        <a href="../" hreflang="en" lang="en">English</a>
+      </div>
+      <p>Un juego independiente hecho en Metepec, Estado de México, por Luis Angel Caballero Jardón. ¿Dudas? <a href="mailto:soporte.bounceroyale@outlook.com">soporte.bounceroyale@outlook.com</a></p>
+      <p>App Store y Game Center son marcas de Apple Inc. Google Play es una marca de Google LLC.</p>
+      <p>© 2026 Luis Angel Caballero Jardón · Bounce Royale: Jump &amp; VS</p>
+    </div>
+  </footer>
+  <script src="../js/site.js" defer></script>
+</body>
+</html>

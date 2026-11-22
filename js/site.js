@@ -1,37 +1,26 @@
-// Bounce Royale: animaciones de entrada y botón de descarga inteligente.
+// Bounce Royale: botón de descarga inteligente.
+// La página funciona completa sin este archivo; solo ajusta enlaces según el teléfono.
 (function () {
-  var IOS_URL = 'https://apps.apple.com/mx/app/bounce-royale-jump-vs/id6761583939';
-  var ANDROID_URL = 'https://play.google.com/store/apps/details?id=com.luiscaballero.bounceroyale&hl=es_MX';
+  var IOS_URL = 'https://apps.apple.com/app/id6761583939';
+  var ANDROID_URL = 'https://play.google.com/store/apps/details?id=com.luiscaballero.bounceroyale';
 
   var ua = navigator.userAgent || '';
   var isAndroid = /android/i.test(ua);
   var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var mine = isIOS ? IOS_URL : isAndroid ? ANDROID_URL : '';
 
-  // El botón "Descargar" lleva directo a la tienda del teléfono; en computadora baja a los botones.
-  document.querySelectorAll('[data-smart-download]').forEach(function (btn) {
-    if (isIOS) btn.href = IOS_URL;
-    else if (isAndroid) btn.href = ANDROID_URL;
-    if (isIOS || isAndroid) { btn.target = '_blank'; btn.rel = 'noopener'; }
-  });
+  // "Descargar" lleva directo a la tienda del teléfono; en computadora baja a las insignias.
+  if (mine) {
+    document.querySelectorAll('[data-smart-download]').forEach(function (btn) {
+      btn.href = mine; btn.target = '_blank'; btn.rel = 'noopener';
+    });
+  }
 
   // En Android, Google Play va primero.
   if (isAndroid) {
-    document.querySelectorAll('.store-row').forEach(function (row) {
-      var a = row.querySelector('[href*="play.google.com"]');
-      if (a) row.insertBefore(a, row.firstChild);
+    document.querySelectorAll('.stores').forEach(function (row) {
+      var play = row.querySelector('[data-store="android"]');
+      if (play) row.prepend(play);
     });
   }
-
-  // Animación al aparecer en pantalla.
-  var items = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) {
-    items.forEach(function (el) { el.classList.add('visible'); });
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  items.forEach(function (el) { io.observe(el); });
 })();
